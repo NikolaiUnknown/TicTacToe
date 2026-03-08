@@ -19,7 +19,7 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
     healthcheck:
-      test: [ "CMD-SHELL", "wget --no-verbose --tries=1 --spider http://${BACKEND_IP}/actuator/health || exit 1" ]
+      test: [ "CMD-SHELL", "wget --no-verbose --tries=1 --spider http://${BACKEND_IP}:8080/actuator/health || exit 1" ]
 
       interval: 1s
       timeout: 5s
